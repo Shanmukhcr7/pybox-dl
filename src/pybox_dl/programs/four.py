@@ -1,0 +1,32 @@
+# Week 4: Small Image Classification Using CNN
+# Aim: Program to perform small image classification using a
+# Convolutional Neural Network (CNN).
+
+# face_cnn.py (Keras)
+import tensorflow as tf
+from tensorflow.keras import layers, models
+
+# Assume a directory 'data/faces' with subfolders per person; for demo use
+# ds = tf.keras.preprocessing.image_dataset_from_directory(
+#     'data/faces', image_size=(128, 128), batch_size=32)
+
+# For runnable demo, use synthetic images:
+x = tf.random.uniform((200, 128, 128, 3))
+y = tf.random.uniform((200,), maxval=5, dtype=tf.int32)
+
+model = models.Sequential([
+    layers.Input(shape=(128, 128, 3)),
+    layers.Conv2D(32, 3, activation='relu'),
+    layers.MaxPool2D(),
+    layers.Conv2D(64, 3, activation='relu'),
+    layers.MaxPool2D(),
+    layers.Flatten(),
+    layers.Dense(128, activation='relu'),
+    layers.Dense(5, activation='softmax')
+])
+
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+model.fit(x, y, epochs=8, batch_size=16, verbose=2)
