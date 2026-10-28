@@ -1,8 +1,3 @@
-# Week 3: Implementation of Neural Network
-# Aim: Program to implement an Artificial Neural Network (ANN)
-# for classification using Python.
-
-# keras_mnist_mlp.py
 import tensorflow as tf
 from tensorflow.keras import layers, models, datasets
 

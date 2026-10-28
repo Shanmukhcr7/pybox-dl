@@ -1,5 +1,3 @@
-# Week 6: Implement Language Modeling using RNN
-
 import numpy as np
 from tensorflow.keras import layers, models, utils
 

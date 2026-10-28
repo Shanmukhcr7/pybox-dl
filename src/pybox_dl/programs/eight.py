@@ -1,12 +1,6 @@
-# Week 8: Image Classification with Transfer Learning
-# Aim: Program to implement Image Classification using Transfer Learning
-# with a pretrained CNN model.
-
-# transfer_learning.py
 import tensorflow as tf
 from tensorflow.keras import layers, models, datasets
 
-# load CIFAR-10 and resize to 96x96 (MobileNetV2 expects >=32, but usually 96+)
 (x_train, y_train), (x_test, y_test) = datasets.cifar10.load_data()
 x_train = tf.image.resize(x_train, (96, 96)) / 255.0
 x_test = tf.image.resize(x_test, (96, 96)) / 255.0

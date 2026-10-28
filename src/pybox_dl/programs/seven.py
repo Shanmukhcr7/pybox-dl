@@ -1,8 +1,3 @@
-# Week 7: Implement Sentiment Analysis using GRU
-# Aim: Program to implement Sentiment Analysis using Gated Recurrent Unit
-# (GRU) network for classifying text as positive or negative.
-
-# sentiment_gru.py
 import tensorflow as tf
 from tensorflow.keras import layers, models, datasets, preprocessing
 

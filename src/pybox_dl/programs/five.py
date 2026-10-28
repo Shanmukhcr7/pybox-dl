@@ -1,5 +1,3 @@
-# Week 5: Sentiment Analysis using LSTM
-
 import tensorflow as tf
 from tensorflow.keras import layers, models, datasets, preprocessing
 
